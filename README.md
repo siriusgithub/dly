@@ -1,2 +1,1 @@
-dly
-u suk
+no u
