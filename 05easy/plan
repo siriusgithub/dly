@@ -1,0 +1,17 @@
+ask for username
+
+open file and check to see if username exists within
+
+if username exists ask for password
+
+hash the password 
+
+ask for the rotation amount
+
+rotate the hashed password
+
+get the hash underneath the username in the file
+
+check if both the file rotated hash and the given rotated hash match
+
+if both match then print logged in
