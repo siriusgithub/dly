@@ -1,6 +1,5 @@
-from itertools import permutations
-
 def n():
+    from itertools import permutations
     numb = input('Enter your number: ')
     for i in sorted(permutations(numb)):
         permutation = int(''.join(i))
