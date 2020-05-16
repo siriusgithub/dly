@@ -11,8 +11,8 @@ revdiglis = list(reversed(diglis))
 print(diglis)
 print(revdiglis)
 
-pre = 0
-cur = 0
+previous = 0
+current = 0
 
 for pos in revdiglis:
     if pre == pos:
