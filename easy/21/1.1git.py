@@ -18,17 +18,23 @@ testNumber9 = "38576" #38675 #38765
 
 digitList = []
 reversedDigitList = []
+sortedDigitList = []
 
-for position in testNumber2:
-    digitList.append(int(position))
+for character in testNumber2:
+    digitList.append(int(character))
 
-reversedDigitList = list(reversed(digitList))
+reversedDigitList = reversed(digitList)
+sortedDigitList = sorted(digitList)
 
-previous = None
-current = None
+previous = "Beginning" # CAN BE NONE
+current = "Beginning" # CAN BE NONE
 switch = False
 
+# TAKE ONE
 for check in range(len(reversedDigitList)):
+    # SKIP THE FIRST check VARIABLE SINCE THERE'S NOTHING TO COMPARE TO
+    if previous == "Beginning"
+       continue
     previous = reversedDigitList[check]
     if switch == True:
        break
@@ -37,14 +43,14 @@ for check in range(len(reversedDigitList)):
         break
         current = reversedDigitList[position]
         if current < previous:
-           print("switch " + str(current) + " w/ " + str(previous))
-           reversedDigitList[check] = current 
-           print(reversedDigitList[position])
-           print(reversedDigitList)
-           reversedDigitList[position] = previous   
-           print(reversedDigitList[check])
-           print(reversedDigitList)
-           switch = True
+           #print("switch " + str(current) + " w/ " + str(previous))
+           #reversedDigitList[check] = current 
+           #print(reversedDigitList[position])
+           #print(reversedDigitList)
+           #reversedDigitList[position] = previous   
+           #print(reversedDigitList[check])
+           #print(reversedDigitList)
+           #switch = True
           
 newDigitList = list(reversed(reversedDigitList))
 for position in newDigitList:
@@ -52,6 +58,7 @@ for position in newDigitList:
 
 print('')
 
+# TAKE TWO
 for position in reversedDigitList:
     if position < previous
 
