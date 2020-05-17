@@ -1,27 +1,34 @@
-def nextPermutation(number):
+def nextPermutation(givenNumber):
     
     running = True
-    number = list(str(number))
+    digitList = list(str(givenNumber))
     
-    for index in range(len(number)):
-        number[index] = int(number[index])
+    for index in range(len(digitList)):
+        digitList[index] = int(digitList[index])
     
-    number.reverse()
+    digitList.reverse()
     
-    for index in range(len(number)):
-        for jndex in range(len(number)-index):
-            if number[index] > number[jndex]:
-                number.insert(jndex+1, number[index])
-                number.pop(index)
-                running = False
-                break
+    for index in range(len(digitList)):
+        for jndex in range(len(digitList) - index):
+            print("index: " + str(index))
+            print("jndex: " + str(jndex))
+            if digitList[index] > digitList[jndex]:
+               print("before: ")
+               print(digitList)
+               digitList.insert(jndex+1, digitList[index])
+               print(digitList)
+               digitList.pop(index)
+               print("after: ")
+               print(digitList)
+               running = False
+               break
         if running == False: # Alternatively if not running:
-            break
+           break
     
-    number.reverse()
+    digitList.reverse()
     
-    number = ''.join(map(str, number))
+    digitList = ''.join(map(str, digitList))
     
-    print(int(number))
+    print(int(digitList))
 
-nextPermutation(38576)
+nextPermutation(37461) #37641 #37614
