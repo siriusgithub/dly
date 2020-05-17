@@ -14,7 +14,6 @@ testNumber7 = '1212211' #1221112
 testNumber8 = '123321' #131223 # find the next smallest postion that is larger than the main swap
                                # to swap with, then go from smallest to largest with largest in the ones place
 
-
 # DECIMAL
 testNumber9 = '38576' #38657 not 38675 we forgot about 57
 testNumber10 = '385766' #386567
