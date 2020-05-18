@@ -3,6 +3,7 @@ from itertools import permutations
 # NUMBERS
 # 38576
 # 37461
+# 28485
 
 def n(numb):
     numb = str(numb)
@@ -25,19 +26,19 @@ def nextPermutation(givenNumber):
     sortingList = []
     finalList = []
     
-    for index in range(len(digitList)):
-        for jndex in range(index, len(digitList)):
-            #print("index: " + str(index))
-            #print("jndex: " + str(jndex))
-            if digitList[index] > digitList[jndex]:
+    for aindex in range(len(digitList)):
+        for bindex in range(aindex, len(digitList)):
+            #print("aindex: " + str(aindex))
+            #print("bindex: " + str(bindex))
+            if digitList[aindex] > digitList[bindex]:
                #print("before: ")
                #print(digitList)
-               digitList.insert(jndex+1, digitList[index])
+               digitList.insert(bindex+1, digitList[aindex])
                #print(digitList)
-               digitList.pop(index)
+               digitList.pop(aindex)
                #print("after: ")
                #print(digitList)
-               for position in range(0, jndex):
+               for position in range(0, bindex):
                    sortingList.append(digitList[position])
                sorted(sortingList)
                sortingList.reverse()
@@ -64,7 +65,6 @@ def nextPermutation(givenNumber):
 
     print(int(finalList))
 
-NEW FAV ANNOYING NUMBER  ->  28485
 
 #testNumberList = [69657, 38563, 71025, 82436, 60762, 49886, 28485, 88757, 43451, 84704]
 
