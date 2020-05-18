@@ -68,9 +68,9 @@ def nextPermutation(givenNumber):
 # TESTING
 #testNumberList = [69657, 38563, 71025, 82436, 60762, 49886, 28485, 88757, 43451, 84704]
 
-#for testNumber in testNumberList:
-#    print('Correct: ')
-#    n(testNumber)
-#    nextPermutation(testNumber)
-#    print('Ours: ')
-#    print('')
+for testNumber in testNumberList:
+     print('C: ', end='')
+     n(testNumber)
+     print('O: ', end='')
+     nextPermutation(testNumber)
+     print('')
