@@ -1,21 +1,26 @@
 from itertools import permutations
 
-# NUMBERS
+# DEBUG NUMBERS
 # 38576
 # 37461
 # 28485
 
 # UNORIGINAL PERMUTATION FUNCTION USING itertools MODULE
-def n(numb):
-    numb = str(numb)
-    for i in sorted(permutations(numb)):
-        permutation = int(''.join(i))
-        if permutation > int(numb):
+def correctPermutation(givenNumber):
+    # CONVERT INT TO STRING SINCE INT IS NOT ITERABLE
+    strNumber = str(givenNumber)
+
+    # CREATE ALL PERMUTATIONS USING ITERABLE DIGITS FROM numb AND SORT
+    for index in sorted(permutations(strNumber)):
+        # 
+        permutation = int(''.join(index))
+        if permutation > givenNumber:
            print(permutation)
            break
 
 # ORIGINAL PERMUTATION FUNCTION
 def nextPermutation(givenNumber):
+    # PRINT ORIGINAL NUMBER
     print("O: " + str(givenNumber))
     # CONVERT givenNumber INTO STRING SO AS TO APPEND INDIVIDUAL CHARACTERS TO digitList
     digitList = list(str(givenNumber))
@@ -77,22 +82,26 @@ def nextPermutation(givenNumber):
     
     #print(int(digitList))
     
+    # REORIENT LIST THE CORRECT WAY
     finalList.reverse()
     
-    finalList = ''.join(map(str, finalList))
+    # TURN finalList INTO STRING
+    finalOutput = ''.join(map(str, finalList))
 
-    print("N: " + str(int(finalList)))
+    # PRINT NEW NUMBER/SOLUTION
+    print("N: " + str(int(finalOutput)))
 
 # SINGLE TESTING
-nextPermutation(69657)
+#nextPermutation(69657)
+#correctPermutation(69657)
 
 # LIST TESTING
-testNumberList = [69657, 38563, 71025, 82436, 60762, 49886, 28485, 88757, 43451, 84704]
-
-# COMPARE CORRECT FUNCTION, n(), TO OUR TEST ONE, nextPermutation()
+#testNumberList = [69657, 38563, 71025, 82436, 60762, 49886, 28485, 88757, 43451, 84704]
+#
+# COMPARE CORRECT FUNCTION, correctPermutation(), TO OUR TEST ONE, nextPermutation()
 #for testNumber in testNumberList:
 #     print('C: ', end='')
-#     n(testNumber)
+#     correctPermutation(testNumber)
 #     print('O: ', end='')
 #     nextPermutation(testNumber)
 #     print('')
