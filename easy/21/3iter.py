@@ -4,6 +4,8 @@ from itertools import permutations
 # 38576
 # 37461
 # 28485
+# 342
+# 5342
 
 # UNORIGINAL PERMUTATION FUNCTION USING itertools MODULE
 def correctPermutation(givenNumber):
@@ -12,24 +14,23 @@ def correctPermutation(givenNumber):
 
     # CREATE ALL PERMUTATIONS USING ITERABLE DIGITS FROM numb AND SORT
     for index in sorted(permutations(strNumber)):
-        # 
+        # CONVERT INDEX INTO SINGLE FULL STRING THEN INTO INT
         permutation = int(''.join(index))
+        # FROM THE SORTED PERMUTATION LIST FIND THE NEXT HIGHEST AFTER givenNumber
         if permutation > givenNumber:
            print(permutation)
            break
 
 # ORIGINAL PERMUTATION FUNCTION
 def nextPermutation(givenNumber):
-    # PRINT ORIGINAL NUMBER
-    print("O: " + str(givenNumber))
     # CONVERT givenNumber INTO STRING SO AS TO APPEND INDIVIDUAL CHARACTERS TO digitList
     digitList = list(str(givenNumber))
     
-    # GO THROUGH digitList CONVERTING NUMBER STRING CHARACTERS TO INT
+    # GO THROUGH digitList CONVERTING EACH CHARACTER STRING TO INT
     for index in range(len(digitList)):
         digitList[index] = int(digitList[index])
     
-    # START AT ONE'S PLACE IN givenNumber
+    # START AT ONES PLACE IN givenNumber
     digitList.reverse()
 
     # DECLARING LISTS
@@ -46,7 +47,11 @@ def nextPermutation(givenNumber):
         for bindex in range(aindex, len(digitList)):
             print("aindex: " + str(aindex) , "value: " + str(digitList[aindex]))
             print("bindex: " + str(bindex) , "value: " + str(digitList[bindex]))
+            # WE NEED TO COMPARE SEPERATED PLACES, CURRENT THE IF STATEMENT ONLY DOES THE FOLLOWING:
             # IF ONES PLACE IS GREATER THAN TENS PLACE
+            # IF TENS PLACE IS GREATER THAN HUNDREDS PLACE
+            # IF HUNDREDS PLACE IS GREATER THAN THOUSANDS PLACE
+            # ETC., WHICH ARE ALL RIGHT NEXT TO EACH OTHER
             if digitList[aindex] > digitList[bindex]:
                print("before: ", end='')
                print(digitList)
@@ -54,6 +59,7 @@ def nextPermutation(givenNumber):
                print("after: ", end='')
                print(digitList)
                digitList.pop(aindex)
+               print("after: ", end='')
                print(digitList)
                for position in range(0, bindex):
                    sortingList.append(digitList[position])
@@ -88,11 +94,14 @@ def nextPermutation(givenNumber):
     # TURN finalList INTO STRING
     finalOutput = ''.join(map(str, finalList))
 
-    # PRINT NEW NUMBER/SOLUTION
+    # PRINT ORIGINAL NUMBER
+    print("O: " + str(givenNumber))
+
+    # PRINT SOLUTION
     print("N: " + str(int(finalOutput)))
 
 # SINGLE TESTING
-#nextPermutation(69657)
+nextPermutation(69657)
 #correctPermutation(69657)
 
 # LIST TESTING
