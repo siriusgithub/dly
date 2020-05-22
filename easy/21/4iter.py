@@ -12,7 +12,7 @@ def correctPermutation(givenNumber):
     # CONVERT INT TO STRING SINCE INT IS NOT ITERABLE
     strNumber = str(givenNumber)
 
-    # CREATE ALL PERMUTATIONS USING ITERABLE DIGITS FROM numb AND SORT
+    # CREATE ALL PERMUTATIONS USING ITERABLE DIGITS FROM strNumber AND SORT
     for index in sorted(permutations(strNumber)):
         # CONVERT INDEX INTO SINGLE FULL STRING THEN INTO INT
         permutation = int(''.join(index))
@@ -26,7 +26,7 @@ def nextPermutation(givenNumber):
     # CONVERT givenNumber INTO STRING SO AS TO APPEND INDIVIDUAL CHARACTERS TO digitList
     digitList = list(str(givenNumber))
     
-    # GO THROUGH digitList CONVERTING EACH CHARACTER STRING TO INT
+    # GO THROUGH digitList CONVERTING EACH STRING CHARACTER TO INT
     for index in range(len(digitList)):
         digitList[index] = int(digitList[index])
     
