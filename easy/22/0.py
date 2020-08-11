@@ -8,7 +8,7 @@ input: ["a","b","c",1,4,], ["a", "x", 34, "4"]
 output: ["a", "b", "c",1,4,"x",34, "4"]
 '''
 
-# to specify number strings ' or " must be used
+# to specify number strings ' or " must be used 
 # spaces indicate a seperation of items
 # strings can be put in quotest to have sentences
 
